@@ -5,3 +5,6 @@ A PDF and word document are included in the project root also labeled README.
 
 # How To Install
 Simply clone this project to your local directory, then open Unity and when prompted for which project to open, use the "open new project" feature and navigate to the project directory 'main' and click 'okay'.
+
+
+Be sure to check out the wiki for tutorials, links and more!
