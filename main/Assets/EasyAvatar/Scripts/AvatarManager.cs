@@ -7,6 +7,7 @@ using UnityEngine;
 /// 
 /// Written By Levy Adams (2/21/2018)
 /// levyadams@aol.com for feedback/support
+/// https://github.com/levyadams
 /// </summary>
 public class AvatarManager : MonoBehaviour
 {
