@@ -45,7 +45,7 @@ public class AvatarManager : MonoBehaviour
         //if either of them are null, send a warning to the user and return.
         if (newMeshRenderer == null || avatarMeshRenderer == null)
         {
-            Debug.LogWarning("No Skinned Mesh Renderer attached to the game object! Make sure to export both objects with a rig attached.");
+            Debug.LogWarning("No Skinned Mesh Renderer attached to the game object! Make sure to export both objects with THE SAME rig attached to BOTH.");
             return;
         }
 
