@@ -16,11 +16,14 @@ public class ItemDatabase : MonoBehaviour
     GameObject avatar;
 
     /// <summary>
-    /// A list for each category of clothing/misc items we want to add to the avatar.
+    /// A list for each category of clothing/misc items we want to add to the avatar along with their mask.
     /// </summary>
     public List<GameObject> hairObjects;
+    public GameObject hairObjectMaskMesh;
     public List<GameObject> ClothingObjects;
+    public GameObject clothingObjectMaskMesh;
     public List<GameObject> ShoesObjects;
+    public GameObject shoesObjectMaskMesh;
 
     //An integer we will increase/reset depending on item equipped and the amount of items present in the list
     int hairObjectCounter = 0;
@@ -51,9 +54,7 @@ public class ItemDatabase : MonoBehaviour
         //If there is no object, return!
         if (hairObjects[hairObjectCounter] == null)
         {
-
             return;
-
         }
 
         //Instantiate the new object to be used from the list of objects provided at the number the current object counter is on.
@@ -66,7 +67,7 @@ public class ItemDatabase : MonoBehaviour
         hairObject = newObject;
 
         //Send the information to the Avatar Manager script to be executed!
-        AvatarManager.instance.AddObjectToMesh(newObject, avatar);
+        AvatarManager.instance.AddObjectToMesh(newObject, hairObjectMaskMesh, avatar);
 
         //if the object counter is equal to the amount of items in the list, we are at the end of the list, and should go back to 0, which is 1 in computer talk
         if (hairObjectCounter == hairObjects.Count - 1)
@@ -106,7 +107,7 @@ public class ItemDatabase : MonoBehaviour
         GameObject newObject = Instantiate(ClothingObjects[clothingObjectCounter], avatar.transform);
         Destroy(clothingObject);
         clothingObject = newObject;
-        AvatarManager.instance.AddObjectToMesh(newObject, avatar);
+        AvatarManager.instance.AddObjectToMesh(newObject, clothingObjectMaskMesh, avatar);
 
         if (clothingObjectCounter == ClothingObjects.Count - 1)
         {
@@ -138,7 +139,7 @@ public class ItemDatabase : MonoBehaviour
         GameObject newObject = Instantiate(ShoesObjects[shoeObjectCounter], avatar.transform);
         Destroy(shoesObject);
         shoesObject = newObject;
-        AvatarManager.instance.AddObjectToMesh(newObject, avatar);
+        AvatarManager.instance.AddObjectToMesh(newObject,shoesObjectMaskMesh, avatar);
 
         if (shoeObjectCounter == ShoesObjects.Count - 1)
         {
