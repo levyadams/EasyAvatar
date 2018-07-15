@@ -105,9 +105,11 @@ public class ItemDatabase : MonoBehaviour
         }
 
         GameObject newObject = Instantiate(ClothingObjects[clothingObjectCounter], avatar.transform);
+        GameObject newObjectMask = Instantiate(clothingObjectMaskMesh, avatar.transform);
+
         Destroy(clothingObject);
         clothingObject = newObject;
-        AvatarManager.instance.AddObjectToMesh(newObject, clothingObjectMaskMesh, avatar);
+        AvatarManager.instance.AddObjectToMesh(newObject, newObjectMask, avatar);
 
         if (clothingObjectCounter == ClothingObjects.Count - 1)
         {
